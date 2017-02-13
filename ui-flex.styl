@@ -1,0 +1,144 @@
+.ui-flex
+  display flex
+
+.ui-flex-row
+.ui-flex-column
+.ui-flex-center
+  &:not(.ui-flex)
+    display flex
+
+.ui-flex-fhvp
+.ui-flex-fit-height-vp
+.ui-flex-fit-height-viewport
+.ui-flex-height
+  height 100vh
+
+.ui-flex-row
+  flex-flow row nowrap
+
+.ui-flex-column
+  flex-flow column nowrap
+
+.ui-flex-reverse:not(.ui-flex-column)
+  flex-direction row-reverse
+
+.ui-flex-column.ui-flex-reverse
+  flex-direction column-reverse
+
+.ui-flex-center
+  display flex
+  justify-content center
+  align-items center
+
+.ui-flex-center-x:not(.ui-flex-column)
+  justify-content center
+
+.ui-flex-center-y:not(.ui-flex-column)
+  align-items center
+
+.ui-flex-column.ui-flex-center-x
+  align-items center
+
+.ui-flex-column.ui-flex-center-y
+  justify-content center
+
+.ui-flex-left:not(.ui-flex-column)
+.ui-flex-row.ui-flex-left
+  justify-content flex-start
+
+.ui-flex-right:not(.ui-flex-column)
+.ui-flex-row.ui-flex-right
+  justify-content flex-end
+
+.ui-flex-top:not(.ui-flex-column)
+.ui-flex-row.ui-flex-top
+  align-items flex-start
+
+.ui-flex-bottom:not(.ui-flex-column)
+.ui-flex-row.ui-flex-bottom
+  align-items flex-end
+
+.ui-flex-column.ui-flex-left
+  align-items flex-start
+
+.ui-flex-column.ui-flex-right
+  align-items flex-end
+
+.ui-flex-column.ui-flex-top
+  justify-content flex-start
+
+.ui-flex-column.ui-flex-bottom
+  justify-content flex-end
+
+.ui-flex-scroll
+.ui-flex-scroll-y
+  overflow-y auto
+
+.ui-flex-scroll-x
+  overflow-x auto
+
+// flex ratio
+
+for num in (1...10)
+  .ui-flex-{num}
+    flex num
+
+// flex wrap
+
+.ui-flex-wrap
+  flex-wrap wrap
+
+.ui-flex-wrap-reverse
+  flex-wrap wrap-reverse !important
+
+.ui-flex-in-row
+.ui-flex-fit-in-row
+  & > div
+    flex 1
+
+for num in (2...13)
+  .ui-flex-{num}-in-row
+    &:not(.ui-flex-wrap)
+      flex-wrap wrap
+    & > div
+      width (100 / num)%
+
+//
+
+.ui-fit-width
+  width 100%
+
+//
+
+.ui-flex-center-children
+  & > *
+    justify-content center
+    align-items center
+  & > *:not(.ui-flex)
+    display flex
+
+// swag scroll
+
+swagScroll =
+  &::-webkit-scrollbar
+      width 8px
+      height 8px
+
+  &::-webkit-scrollbar-thumb
+    background-color rgba(0, 0, 0, 0)
+
+  &::-webkit-scrollbar-thumb:window-inactive
+    display none
+
+  &:hover
+    &::-webkit-scrollbar-thumb
+      background-color rgba(0, 0, 0, .4)
+
+.ui-flex-swag-scroll
+.ui-flex-swag-scroll-y
+  overflow-y auto
+  {swagScroll}
+
+.ui-flex-swag-scroll-x
+  overflow-x auto
+  {swagScroll}
